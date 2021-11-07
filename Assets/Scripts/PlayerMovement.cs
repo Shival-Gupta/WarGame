@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
         float x = Input.GetAxis("Horizontal"); // A D
         float z = Input.GetAxis("Vertical"); // W S
 
-        Vector3 move = (transform.right * x + transform.forward * z).normalized; // Local Axis from Player
+        Vector3 move = (transform.right * x + transform.forward * z); // Local Axis from Player
         characterController.Move(move * (Input.GetKey(KeyCode.LeftShift) ? walkSpeed : sprintSpeed) * Time.deltaTime); // Moves Player WASD
 
         // Jump
